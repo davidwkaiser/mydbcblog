@@ -1,0 +1,37 @@
+html {
+  background-color: lightblue;
+  font-family: Tahoma;
+}
+
+header{
+  background-color: #0099cc;
+  border-style: groove;
+  border-color: #000066;
+}
+
+div{
+  border-style: groove;
+  border-color: #000066;
+}
+
+footer{
+  border-style: groove;
+  border-color: #000066;
+}
+
+th, td {
+    padding: 15px;
+}
+
+
+a:link {
+  color: #000066;
+}
+
+a:visited{
+color:#660066;
+}
+
+a:hover{
+background-color:#ff3300;
+};
