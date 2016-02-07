@@ -1,0 +1,94 @@
+<DOCTYPE! html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/blog.css">
+  <title>Blog Post: CSS</title>
+</head>
+<body>
+<header>
+<b>Welcome to Dave Kaiser's Page!</b>
+<img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_twitter_button_blue.png" width="30" height="30" alt="Twitter" style="margin-left: 400px">
+<img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-box-blue-icon.png" width="30" height="30" alt="FB">
+<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="30" height="30" alt="GitHub">
+<img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" width="30" height="30" alt="LinkedIn">
+<h1>The Dave Continuum</h1>
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Contact</a>
+  <a href="#">About Me</a>
+  <a href="#">Projects</a>
+  <a href="#">Resume</a>
+  <a href="#">Blog</a>
+</nav>
+<p>Dave knows human languages</p>
+<p>Dave is learning computer languages</p>
+<p>Follow along!</p>
+</header>
+
+<div id="blog">
+<h3>CSS Concepts</h3>
+<h4>Some Tricky Questions</h4>
+<h4>February 6, 2016</h4>
+<section>
+<p>For this assignment, we were asked four questions about CSS. They are listed below. I need to answer one of them. Since three of them (2, 3 & 4) are areas where I don't feel comfortable yet, I'm going to answer all three instead. Apparently, I have a bit too much time on my hands, I'm sure that will change soon enough...</p>
+
+<p class="question">1. What is the difference between margin, border, and padding?</p>
+
+<p>This I already understand. It is fairly well explained with the "Box Model" (see graphic)</p>
+
+<img src="http://www.w3schools.com/css/box-model.gif" alt="Box Model" height=150px width=225px>
+
+<p>Also, the Margin and the padding are transparent, so we see the background color</p>
+
+<p class="question">2. What are the best practices associated with using classes vs. ids?</p>
+
+<p>So the best explanation of this question came from <a href="http://www.iraqtimeline.com/maxdesign/basicdesign/principles/princlass.html">THIS PAGE</a>. Below is the quote that seems to capture it best. </p>
+
+<p class = "quote">"Maybe a good analogy here is bar codes and serial numbers. Take an iPod in a store. On the packaging will be a bar code. This tells the store what the product is, so when it is scanned, the system knows exactly what the product is and what it costs. It might even be able to know what color it is or where it was kept in the store. All iPod of this same type have the exact same bar code on them.</p>
+
+<p class = "quote">"The iPod will also have a serial number on it which is absolutely unique to any other iPod (or any other device) in the world. The serial number doesn’t know the price. It could, but for the store this wouldn’t be a very efficient way to store and use that data. Much easier to use the barcode, so that for example, if the price changed, you could just change the price for that bar code and not every individual serial number in your system.</p>
+
+<p class = "quote">This is much like ID’s and Classes. Information that is reuseable should be kept in a class and information that is totally unique should be kept in an ID."</p>
+
+<p>So bottom line, "class" is for groups of things and "IDs" are for specific individuals. I created several classes to be used in blog posts, in the course of doing this research. There is a class for "questions" and a class for "quotes," since I will likely use those items over and over again. I saw several examples that refered to individual comments on a blog post as a good use of the ID item.</p>
+
+<p class="question">3. What are the differences between relative, absolute, fixed, and static positioning?</p>
+
+<p>OK this is tricky. I found a great explanation / demostration of the different types of position at <a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">THIS PAGE</a> and a solid discussion <a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">HERE</a>, I think I understand it, but I'm not sure how well I can explain it, but I'll try</p>
+
+<p>Static is the default, it just means the element is placed where it "normally" would be assigned if you don't specify further.</p>
+
+<p>Relative can be used to move an element. For example we can add "top=20px" to move the element DOWN 20 pixels relative to where "position: static" would have placed it. Although it is "moved" in terms of where we see it, other items are placed relative to it as if it were in its "static" place. Poorly explained, but I understand it...</p>
+
+<p>Absolute means you can pin something to a very specific place on the page and it will stay there. However, this removes it from the flow of the items, other items will ignore it and will not position relative to it. </p>
+
+<p>Fixed means that the position on the viewer stays the same, so that if you scroll down or right, for example, the fixed element remains in the same place on your screen. We may see this on those "sign up now and get a free thingie" boxes on some "squeeze pages."</p>
+
+<p class="question">4. What does it mean to display inline vs using inline block?</p>
+
+I found a nice visual of this at <a href="http://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block"> STACK OVERFLOW</a>:<br>
+
+<img src="http://i.stack.imgur.com/mGTYI.png" alt="position" height = 200px width = 600px>
+
+<p>It was explained very succinctly as follows:</p>
+
+<p class="quote">"An inline element has no line break before or after it, and it tolerates HTML elements next to it.</p>
+<p class="quote">A block element has some whitespace above and below it and does not tolerate any HTML elements next to it.</p>
+<p class="quote">An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element."</p>
+<p>That seems to sum things up very nicely.</p>
+
+</section>
+</div>
+
+<footer>
+  <table>
+ <tr>
+<td>This is the footer</td>
+<td>I'm not sure what will go here yet</td>
+<td>But it will be important</td>
+</tr>
+</table>
+</footer>
+</body>
+</html>

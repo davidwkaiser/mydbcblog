@@ -1,3 +1,12 @@
 #blog {
   font-family:papyrus
 }
+
+.question {
+  font-size: 1.5em
+}
+
+.quote{
+  margin-left: 50px;
+  margin-right: 50px
+}
