@@ -1,0 +1,72 @@
+<DOCTYPE! html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/blog.css">
+  <title>Blog Post: Arrays and Hashes</title>
+</head>
+<body>
+<header>
+<b>Welcome to Dave Kaiser's Page!</b>
+<img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_twitter_button_blue.png" width="30" height="30" alt="Twitter" style="margin-left: 400px">
+<img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-box-blue-icon.png" width="30" height="30" alt="FB">
+<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="30" height="30" alt="GitHub">
+<img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" width="30" height="30" alt="LinkedIn">
+<h1>The Dave Continuum</h1>
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Contact</a>
+  <a href="#">About Me</a>
+  <a href="#">Projects</a>
+  <a href="#">Resume</a>
+  <a href="#">Blog</a>
+</nav>
+<p>Dave knows human languages</p>
+<p>Dave is learning computer languages</p>
+<p>Follow along!</p>
+</header>
+
+<div id="blog">
+<h3>Hashes and Arrays</h3>
+<h4>Different Types of Data Structures</h4>
+<h4>February 13, 2016</h4>
+<section>
+
+<p>Hashes and arrays are both data structures in Ruby.</p>
+<p>An ARRAY is an ordered list. Its elements can incude any data type: integers, floats, constants, variables, other arrays, and hashes. Elements are retrieved using their index, as we see in the example below.</p>
+<pre><CODE>
+array = [107, "text", [a,b,c]]
+puts array[0]
+107
+</CODE></pre>
+<p>Indices are assigned to each element of the array, starting with the index 0 (don't ask, most programming languages do this, there is a reason, you can read about it <a href="http://programmers.stackexchange.com/questions/110804/why-are-zero-based-arrays-the-norm">HERE</a>). Anyway, the array is ordered, so in our above example, array[0] = 107, array[1] = "text," etc. The good news is that it's simple, it's basically just a list of stuff. You can repeat elements, and you can use all sorts of cool built in methods like .sort, .length, etc, to manipulate them. The downside is that you can only use numbers as indices, you can't associate abbreviations with their full names, for example. For this, in Ruby, you need a hash.</p>
+<p>A HASH is a data structure which associates "values" with unique "keys," as we see in the example below:</p>
+<pre><CODE>
+months = {
+"Jan" => "January",
+"Feb" => "February",
+"Mar" => "March",
+}
+puts months["Jan"]
+"January"
+</CODE></pre>
+<p>The element on the left is the "key," it must be unique. The element on the right is the value associated with that key, it does not need to be unique. Like an array, a hash can contain all data types.</p>
+<p>In a sense, a hash is similar to an array, except that the "key" in an array is necessarily an integer in a fixed order, while the "key" in a hash can be all sorts of things. </p>
+<p>Like arrays, hashes have many built-in methods to manipuulate the data within them.</p>
+<p>If you find yourself wondering whether to use an array or a hash, the diagnostic here is quite simple. If you are working with a set of items which do not require order, or can be ordered simply with integers, an array will probably do the trick. If you need to associate values with something more complex than numbers, such as abbreviations, locations, names, social security numbers, etc, then the additional complexity a hash requires will be more be worth it. </p>
+
+
+
+</section>
+</div>
+<footer>
+  <table>
+ <tr>
+<td>This is the footer</td>
+<td>I'm not sure what will go here yet</td>
+<td>But it will be important</td>
+</tr>
+</table>
+</footer>
+</body>
+</html>
