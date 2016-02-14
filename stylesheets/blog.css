@@ -1,5 +1,5 @@
 #blog {
-  font-family:papyrus
+  padding-left: 100px
 }
 
 .question {
@@ -8,11 +8,11 @@
 
 .quote{
   margin-left: 50px;
-  margin-right: 50px
+  margin-right: 50px;
+  font-style: italic;
 }
 
 code{
   background-color: white;
   color: red
-
 }
