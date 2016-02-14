@@ -14,13 +14,14 @@
 <img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" width="30" height="30" alt="LinkedIn">
 <h1>The Dave Continuum</h1>
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Contact</a>
+  <a href="http://davidwkaiser.github.io/">Home</a>
   <a href="#">About Me</a>
   <a href="#">Projects</a>
   <a href="#">Resume</a>
-  <a href="#">Blog</a>
+  <a href="#">Contact</a>
+  <a href="http://davidwkaiser.github.io/blog/index.html">Blog</a>
 </nav>
+
 <p>Dave knows human languages</p>
 <p>Dave is learning computer languages</p>
 <p>Follow along!</p>
@@ -32,15 +33,17 @@
 <h4>February 13, 2016</h4>
 <section>
 
-<p>Hashes and arrays are both data structures in Ruby.</p>
-<p>An ARRAY is an ordered list. Its elements can incude any data type: integers, floats, constants, variables, other arrays, and hashes. Elements are retrieved using their index, as we see in the example below.</p>
+<p>Hashes and arrays are both data structures in Ruby. Both are used to store and manipulate data, but they serve different functions.</p>
+<p class="question">Arrays</p>
+<p>An array is an ordered list. Its elements can incude any data type: integers, floats, constants, variables, other arrays, and hashes. Elements are retrieved using their index, as we see in the example below.</p>
 <pre><CODE>
 array = [107, "text", [a,b,c]]
 puts array[0]
 107
 </CODE></pre>
 <p>Indices are assigned to each element of the array, starting with the index 0 (don't ask, most programming languages do this, there is a reason, you can read about it <a href="http://programmers.stackexchange.com/questions/110804/why-are-zero-based-arrays-the-norm">HERE</a>). Anyway, the array is ordered, so in our above example, array[0] = 107, array[1] = "text," etc. The good news is that it's simple, it's basically just a list of stuff. You can repeat elements, and you can use all sorts of cool built in methods like .sort, .length, etc, to manipulate them. The downside is that you can only use numbers as indices, you can't associate abbreviations with their full names, for example. For this, in Ruby, you need a hash.</p>
-<p>A HASH is a data structure which associates "values" with unique "keys," as we see in the example below:</p>
+<p class="question">Hashes</p>
+<p>A hash is a data structure which associates "values" with unique "keys," as we see in the example below:</p>
 <pre><CODE>
 months = {
 "Jan" => "January",
