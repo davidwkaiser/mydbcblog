@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/blog.css">
+  <title>Blog Post: Enumerables</title>
+</head>
+<body>
+<header>
+<b>Welcome to Dave Kaiser's Page!</b>
+<a href="http://twitter.com/DWKPhD"><img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_twitter_button_blue.png"  alt="Twitter" width="30" height="30"></a>
+<a href="https://www.facebook.com/davidwkaiser"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-box-blue-icon.png" alt="FB" width="30" height="30"></a>
+<a href="https://github.com/davidwkaiser"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="30" height="30"></a>
+<a href="https://www.linkedin.com/in/davidwkaiser"><img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" alt="LinkedIn" width="30" height="30"></a>
+<h1>The Dave Continuum</h1>
+<nav>
+  <a href="http://davidwkaiser.github.io/">Home</a>
+  <a href="#">About Me</a>
+  <a href="#">Projects</a>
+  <a href="#">Resume</a>
+  <a href="http://davidwkaiser.github.io/contact.html">Contact</a>
+  <a href="http://davidwkaiser.github.io/blog/blog_index.html">Blog</a>
+</nav>
+<p>Dave knows human languages</p>
+<p>Dave is learning computer languages</p>
+<p>Follow along!</p>
+</header>
+
+<div id="blog">
+<h3>Enumerables</h3>
+<h4>You can count on them (ha ha, oh, sorry, that's terrible...)</h4>
+<h4>February 21, 2016</h4>
+<section>
+<p class="question">What is an ENUMERABLE?</p>
+<p>The best description I've seen, found at <a href="http://ruby.bastardsbook.com/chapters/enumerables/">The Bastards Book of Ruby</a> is that "The Enumerable module provides a set of methods to traverse, search, sort and manipulate collections."</p>
+<p>An enumerable is a "mixin,"" a module imported into a class so it can be used, and the class must provide an "each" method, which yields members of the collection, one at a time. </p>
+<p>Enumerables come with some pretty cool iterators, such as #map, #group_by and #cycle</p>
+<p>The #map method <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods">"returns a new array filled with whatever gets returned by the block each time it runs." </a>It's great for changing the elements in a specific way, for example, taking each one, doubling it, and putting it back. </p>
+<p>The #group_by method creates a hash from an array or a hash, based on some criteria, such as length of the entry, alphabetical, or even random assignment.</p>
+<p>Both very cool methods, but we are going to focus on the #cycle method for enumerables. A good explanation for #cycle is that you <a href="http://www.globalnerdy.com/2008/07/06/enumerating-enumerable-enumerablecycle/">"use it to create an object that spits out the next item in a repeating sequence,"</a>as we see in the snippet of code below:</p>
+<pre><code>
+# Enumerator's "next" method gives us the next day of the week
+days.next
+=> "Monday"
+
+days.next
+=> "Tuesday"
+
+days.next
+=> "Wednesday"
+</code></pre>
+
+<p>Cycle will loop indefinitely, unless we specify a number of times through the cycle. We see this in the code snippet below, from the <a href="http://ruby-doc.org/core-2.3.0/Enumerable.html#method-i-cycle">Ruby Docs</a></p>
+<pre><code>
+a = ["a", "b", "c"]
+a.cycle { |x| puts x }  # print, a, b, c, a, b, c,.. forever.
+a.cycle(2) { |x| puts x }  # print, a, b, c, a, b, c.
+</code></pre>
+Basically, it's great for generating (potentially endless) cycles. You could use #cycle to figure out the day of the week for a future date, or assign a rotating work crew over a rotating set of tasks.
+
+</section>
+</div>
+<footer>
+  <table>
+ <tr>
+<td>This is the footer</td>
+<td>I'm not sure what will go here yet</td>
+<td>But it will be important</td>
+</tr>
+</table>
+</footer>
+</body>
+</html>
