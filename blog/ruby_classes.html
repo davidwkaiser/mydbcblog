@@ -38,9 +38,47 @@
 
 <p>What does any of this have to do with Ruby, or with programing? Classes in Ruby are a lot like a carpenter's jig. It helps you to create lots of similar items quickly while maintaining similarities across objects.</p>
 
-<p>For example, if you were a freelancer and wanted to track information about yourself and your work, you probably wouldn't create an "employee" class, you would just store the information somewhere in your program, and this would be fine for as long as it lasted. But if you started hiring people and storing their data in the same way, you might find that your data is chaotic and accessing or changing it is inefficient.</p>
+<p>For example, if you were a freelancer and wanted to track information about yourself and your work, you probably wouldn't create an "employee" class, you would just store the information somewhere in your program(see example below), and this would be fine for as long as it lasted. </p>
 
-<p>That is the point where a carpenter would recognize that he or she is going to need a jig, and where the programmer is going to need a class. He or she would spend a little time creating it, but then the ease of creating new, standardized items, ready for use, would make that a good investment of time and energy.</p>
+<pre><CODE>
+name = "David Kaiser"
+salary = 100000
+projects = ["ABC Corp", "XYZ Ltd.", "Yoyodyne Aerospace"]
+</CODE></pre>
+
+<p>But if you started hiring people and storing their data in the same way, you might find that your data is chaotic and accessing or changing it is inefficient. What would be the variable name for employee number one's name? name2? name_two? kathleens_name? You see where this is going. </p>
+
+<p>That is the point where a carpenter would recognize that he or she is going to need a jig, and where the programmer is going to need a class. He or she would spend a little time creating it, but then the ease of creating new, standardized items, ready for use, would make that a good investment of time and energy. Code for an employee class might look like this: </p>
+
+<pre><CODE>
+Class Employee    #(we use capitalized variables for classes)
+  attr_reader :name, :address, :social_security, :salary, :hire_date
+
+  def initialize (name, address, social_security, salary, hire_date)
+    @name = name
+    @address = address
+    @social_security = social_security
+    @salary = salary
+    @hire_date = hire_date
+  end
+
+  def change_salary(new_salary)
+    @salary = new_salary
+  end
+end
+
+dwk = Employee.new("David Kaiser", "2632 Broadway", "123-45-6789", 100000, Date.today)
+
+puts dwk.salary
+100000
+
+dwk.change_salary(150000)
+
+puts dwk.salary
+150000
+
+</CODE></pre>
+<p>This bit of code allows us to create as many new employee objects as we like, and it assigns them each their own name, address, etc. There is also an instance method, basically a function that only works on that particular item, for changing salary. So, we see above, we create an employee "dwk", we can print out his salary, change his salary, and print out the new salary and see that it has changed. Much cooler than just having a mess of non-standardized variables all over the place you have to remember, wouldn't you agree? </p>
 </section>
 </div>
 <footer>
