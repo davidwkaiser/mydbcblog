@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/blog.css">
+  <title>JavaScript Syntax Cheat Sheet</title>
+</head>
+<body>
+<header>
+<b>Welcome to Dave Kaiser's Page!</b>
+<a href="http://twitter.com/DWKPhD"><img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_twitter_button_blue.png"  alt="Twitter" width="30" height="30"></a>
+<a href="https://www.facebook.com/davidwkaiser"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-box-blue-icon.png" alt="FB" width="30" height="30"></a>
+<a href="https://github.com/davidwkaiser"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="30" height="30"></a>
+<a href="https://www.linkedin.com/in/davidwkaiser"><img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" alt="LinkedIn" width="30" height="30"></a>
+<h1>The Dave Continuum</h1>
+<nav>
+  <a href="http://davidwkaiser.github.io/">Home</a>
+  <a href="http://davidwkaiser.github.io/about.html">About Me</a>
+  <a href="http://davidwkaiser.github.io/projects/project-index.html">Projects</a>
+  <a href="#">Resume</a>
+  <a href="http://davidwkaiser.github.io/contact.html">Contact</a>
+  <a href="http://davidwkaiser.github.io/blog/blog_index.html">Blog</a>
+</nav>
+<p>Dave knows human languages</p>
+<p>Dave is learning computer languages</p>
+<p>Follow along!</p>
+</header>
+
+<div class="blog">
+<h3>JavaScript Syntax Cheat-Sheet</h3>
+<h4>'Cuz it's hard to remember sometimes...</h4>
+<h4>March 11, 2016</h4>
+<section>
+<p>So, I had a lot more practice with Ruby, and Ruby is just so intuitive and <i>pretty.</i> As a result it took me a while get the syntax right with Javascript (by "a while," I mean "still trying to get it right"). And the JS syntax for nested data structures and objects just makes my head melt. I'm glad I'm doing this, I was complaining to a pair this morning that I have yet to find a really good explanation of it, so I might have to create it myself. </p>
+<p>I learn and remember by working backwards from examples to principles, so that is what we will be doing here (it's my cheat sheet, I can do what I want...)</p>
+
+<p>So, without further ado...</p>
+<b>BASIC SYNTAX</b>
+<h5>FOR Loops</h5>
+<pre><CODE>
+for (var i =1; i <= 10; i ++ ){
+  console.log(i)
+}
+</CODE></pre>
+<p>"i" is the counter, it increments by 1, stopping when equal to 10. Don't forget to include "var" to declare i, unless it has already been declared. This code will print 1 to 10.</p>
+<p>CAUTION: use the syntax FOR X IN Y to loop over the keys of the object Y, DO NOT try to use like Ruby FOR X IN Y.</p>
+</CODE></pre>
+<h5>WHILE Loops</h5>
+<pre><CODE>
+var i = 1
+while (i <=10){
+  console.log(i);
+  i++
+}
+</CODE></pre>
+<p>This code also counts to 10. </p>
+<h5>IF~ELSE</h5>
+<p>Here is a very basic IF statement, with an optional ELSE. These can be chained by adding ELSE IF plus a block of code. </p>
+<pre><code>
+var x = 3
+if (x % 2 === 0 ){
+  console.log("it's even!")
+} else {
+  console.log("it's odd!")
+}
+</code></pre>
+<p>If we abstract this we get: </p>
+<pre><code>
+if(condition) {
+do this block of code
+}
+</code></pre>
+<b>OBJECTS</b>
+<p>I was just starting to get Objects in Ruby and we switched to Javascript, where an "object" is a weird hybrid of a ruby hash and ruby object. On top of that, there are two different ways to access the values in JS nested data structures.</p>
+<p>So we'll start with a tiny object, which we'll "borrow" from a recent homework assignment.</p>
+<pre><CODE>
+var votes = {
+  "Alex": { president: "Bob", vicePresident: "Devin", secretary: "Gail", treasurer: "Kerry" },
+  "Bob": { president: "Mary", vicePresident: "Hermann", secretary: "Fred", treasurer: "Ivy" },
+  "Cindy": { president: "Cindy", vicePresident: "Hermann", secretary: "Bob", treasurer: "Bob" }
+}
+</CODE></pre>
+<p>We can have all sort of fun with this object. If we want to print out just the NAMES of the NAME: VALUE pairs, we can use this code:</p>
+<pre><code>
+for (var vote in votes){
+console.log(vote)
+}
+</code></pre>
+<p>This will yield the following: </p>
+<pre><CODE>
+Alex
+Bob
+Cindy
+</CODE></pre>
+<p>if we want just the VALUES, we can try this:</p>
+<pre><CODE>
+for (var vote in votes){
+console.log(votes[vote])
+}
+</CODE></pre>
+<p>This will yield:</p>
+<pre><code>
+{ president: 'Bob',
+  vicePresident: 'Devin',
+  secretary: 'Gail',
+  treasurer: 'Kerry' }
+{ president: 'Mary',
+  vicePresident: 'Hermann',
+  secretary: 'Fred',
+  treasurer: 'Ivy' }
+{ president: 'Cindy',
+  vicePresident: 'Hermann',
+  secretary: 'Bob',
+  treasurer: 'Bob' }
+</code></pre>
+<p>Note that VOTE is in brackets, but is NOT in quotes. That is because it is a variable. Names must be in quotes, variables must not be in quotes. Dot notation can be used only for established names, so while the first expression below will yield UNDEFINED, the second and third will work. We can use dot or bracket notation because Alex is an established name.</p>
+<pre><CODE>
+console.log(votes.vote) => undefined
+
+console.log(votes.Alex)
+OR console.log(votes["Alex"])=>
+{ president: 'Bob',
+  vicePresident: 'Devin',
+  secretary: 'Gail',
+  treasurer: 'Kerry' }
+</CODE></pre>
+<p>Are we having fun yet? I'm not sure this is fun, but it is definitely helping me remember stuff, I'm already looking forward to using it.</p>
+<p>Now let's say we want to access Alex's vote for Treasurer. We would use ANY of the expressions below:</p>
+<pre><CODE>
+console.log(votes.Alex.treasurer)
+console.log(votes["Alex"].treasurer)
+console.log(votes.Alex["treasurer"])
+console.log(votes["Alex"]["treasurer"]) => Kerry
+</CODE></pre>
+<p>That said, just because we CAN use any of the above expressions, doesn't mean we SHOULD. It is best practice to use either dot or bracket consistently as much as possible. </p>
+
+<pre><CODE></CODE></pre>
+<pre><CODE></CODE></pre>
+
+</section>
+</div>
+<footer>
+  <table>
+ <tr>
+<td>This is the footer</td>
+<td>I'm not sure what will go here yet</td>
+<td>But it will be important</td>
+</tr>
+</table>
+</footer>
+</body>
+</html>
+
+<!--
+What content was solidified in the process of completing this challenge?
+I already had a mostly decent handle on the loops and IF, but it helped to go over it.
+It was very helpful to work through the datastructure work and get superclear
+on the notation and conventions, both of the notation itself, and how it interacts
+with loops
+
+What content do you feel a bit fuzzy on still?
+Well, I feel pretty good about it, so "fuzzy" would be the "unknown unknowns," which are always the most dangerous...
+
+What was the most difficult part of this challenge?
+Feelings of inadequacy about the crappy look and feel of my site. As usual, I feel good about the content, but not the design.
+
+
+Has your ability to add CSS to format and position objects improved since week 3?
+Sadly, NO. I dislike visual design. So My site looks like a throwback to 2002, not because my CSS sucks, but because my design skill sucks.
+If I were assigned a specific look to create with CSS, I'm sure I could do it, but I freeze up at the design stage.
+I prefer to "choose" vs "create from nothing" for this sort of thing. I will need to find a good visual designer and get some mentoring.
+I can do this, I know I can, but it's a stretch and so there is resistance.
+
+-->
