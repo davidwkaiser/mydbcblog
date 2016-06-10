@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href=" ../stylesheets/blog.css">
+  <title>Blog Post: Postgres DB</title>
+</head>
+<body>
+<header>
+<b>Welcome to Dave Kaiser's Page!</b>
+<a href="http://twitter.com/DWKPhD"><img src="https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_twitter_button_blue.png"  alt="Twitter" width="30" height="30"></a>
+<a href="https://www.facebook.com/davidwkaiser"><img src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-box-blue-icon.png" alt="FB" width="30" height="30"></a>
+<a href="https://github.com/davidwkaiser"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="30" height="30"></a>
+<a href="https://www.linkedin.com/in/davidwkaiser"><img src="http://www.adasiaonline.com/wp-content/uploads/2015/11/linkedin-logo2.png" alt="LinkedIn" width="30" height="30"></a>
+<h1>The Dave Continuum</h1>
+<nav>
+  <a href="http://davidwkaiser.github.io/">Home</a>
+  <a href="http://davidwkaiser.github.io/about.html">About Me</a>
+  <a href="http://davidwkaiser.github.io/projects/project-index.html">Projects</a>
+  <a href="#">Resume</a>
+  <a href="http://davidwkaiser.github.io/contact.html">Contact</a>
+  <a href="http://davidwkaiser.github.io/blog/blog_index.html">Blog</a>
+</nav>
+<p>Dave knows human languages</p>
+<p>Dave is learning computer languages</p>
+<p>Follow along!</p>
+</header>
+
+<div class="blog">
+<h3>Postgres and Migrations</h3>
+<h4>Order Matters</h4>
+<h4>June 10, 2016</h4>
+<section>
+<p>This is my first post to this blog in a long time. I created this blog as part of the "Phase 0" prep work for <a href="http://devbootcamp.com">Dev Bootcamp</a>, and I have since completed the whole program! Anyway, I know the whoel blog needs an overhaul, but in the meantime I decided to post a little bit that I learned in the course of a side project.</p>
+<p>So, I created a toy project during DBC, a Rails app with a SQLite3 database, and I wanted to deploy it on Heroku. Heroku requires Postgres instead of SQLite. So, I broke my app trying to install Postgres, then rebuilt it from the parts of the old one.</p>
+<p>When I first ran the migrations to create the new DB, it crashed. What? Why? It worked for SQLite? I couldn't find much on Google about why, but I had a hunch. My Rails app had nested resources with a "has_many ~ belongs_to" association, and I ran the inner, "dependent" one first, and it threw an error and crashed. I reversed the order and ran the outer migration first (the one that "has_many," not the one that "belongs_to"), and it ran just fine.</p>
+<p>So that's it, it's not a game changer, but this is my contribution towards the comunity, hopefully if your migrations crash and you can't figure out why, this post will help.</p>
+
+</section>
+</div>
+<footer>
+  <table>
+ <tr>
+<td>This is the footer</td>
+<td>I'm not sure what will go here yet</td>
+<td>But it will be important</td>
+</tr>
+</table>
+</footer>
+</body>
+</html>
+
+
